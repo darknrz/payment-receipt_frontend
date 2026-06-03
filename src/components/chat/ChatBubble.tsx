@@ -1,6 +1,7 @@
 import { ReceiptCard } from '../receipts/ReceiptCard'
 import type { ChatMessage } from '../../types'
 import { formatDate } from '../../utils/formatters'
+import { renderMessageContent } from '../../utils/renderMessageContent'
 
 type ChatBubbleProps = {
   message: ChatMessage
@@ -27,7 +28,7 @@ export function ChatBubble({ message }: ChatBubbleProps) {
         </span>
         <time>{formatDate(message.timestamp)}</time>
       </div>
-      <p className="mt-2 whitespace-pre-wrap">{message.content}</p>
+      {renderMessageContent(message.content)}
       {message.receipt ? <ReceiptCard receipt={message.receipt} /> : null}
     </article>
   )
