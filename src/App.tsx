@@ -72,7 +72,7 @@ function App() {
         ),
       ])
     } catch {
-      // El historial no bloquea el flujo principal del reto.
+
     }
   }
 
